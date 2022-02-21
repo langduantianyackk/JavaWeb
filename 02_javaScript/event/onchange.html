@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容发生改变</title>
+    <script type="text/javascript">
+        //内容发生改变事件主要用于输入框，下拉列表的内容发生改变时所触发的事件
+        //静态注册内容发生改变
+        function onchangefun(){
+            console.log("静态注册内容发生改变事件");
+        }
+
+        //动态注册内容发生改变事件
+        window.onload = function(){
+            //获取标签对象
+            var onchangObj = document.getElementById("country");
+
+            //标签对象.事件 = function(){}
+            onchangObj.onchange = function(){
+                console.log("动态注册内容发生改变事件");
+            }
+        }
+
+    </script>
+</head>
+<body>
+<!--静态注册内容发生改变事件-->
+<input type="text" onchange="onchangefun()"/><br/>
+<select id="country">
+    <option value="none">-----请选择国籍-----</option>
+    <option value="cn">中国</option>
+    <option value="us">美国</option>
+    <option value="jp">日本</option>
+    <option value="kr">韩国</option>
+</select>
+</body>
+</html>

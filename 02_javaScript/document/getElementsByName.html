@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //全选
+        function onclickAll(){
+            //通过name属性获得标签元素的集合
+            var hobbies = document.getElementsByName("hobby");
+            //可以把集合当做一个数组,发现数组中元素的值得顺序和html中的顺序一致
+            // alert(hobbies[2].value);//
+
+            //chekcked属性可读可写
+            // hobbies[0].checked=true;
+
+            for(var i=0; i<hobbies.length; i++){
+                hobbies[i].checked=true;
+            }
+        }
+        //全不选
+        function onclickNo(){
+            //通过name属性获得标签元素的集合
+            var hobbies = document.getElementsByName("hobby");
+            //可以把集合当做一个数组,发现数组中元素的值得顺序和html中的顺序一致
+            // alert(hobbies[2].value);//
+
+            //chekcked属性可读可写
+            // hobbies[0].checked=true;
+
+            for(var i=0; i<hobbies.length; i++){
+                hobbies[i].checked=false;
+            }
+        }
+        //反选
+        function onclickReverse(){
+            //通过name属性获得标签元素的集合
+            var hobbies = document.getElementsByName("hobby");
+            //可以把集合当做一个数组,发现数组中元素的值得顺序和html中的顺序一致
+            // alert(hobbies[2].value);//
+
+            //chekcked属性可读可写
+            // hobbies[0].checked=true;
+
+            for(var i=0; i<hobbies.length; i++){
+                hobbies[i].checked = !hobbies[i].checked;
+
+               // if(hobbies[i].checked){
+               //     hobbies[i].checked = false;
+               // }else{
+               //     hobbies[i].checked = true;
+               // }
+            }
+        }
+    </script>
+</head>
+<body>
+    兴趣爱好：
+    <input type="checkbox" name="hobby" value="cpp"/>C++
+    <input type="checkbox" name="hobby" value="java"/>JAVA
+    <input type="checkbox" name="hobby" value="js"/>javaScript<br/>
+    <button onclick="onclickAll()">全选</button>
+    <button onclick="onclickNo()">全不选</button>
+    <button onclick="onclickReverse()">反选</button>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单提交事件</title>
+    <script type="text/javascript">
+        //静态注册表单提交事件
+        function onsubmitfun(){
+            alert("静态注册表单提交事件----发现不合法");
+
+            return false;
+        }
+
+        //动态注册表单提交
+        window.onload = function(){
+            //获取标签对象
+            var formObj = document.getElementById("st01");
+            // alert(formObj);
+
+            //标签对象.事件名 = function(){}
+            formObj.onsubmit = function(){
+                alert("动态注册表单提交事件----发现不合法");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--return false 可以阻止表单提交-->
+    <form action="http://www.baidu.com" method="post" onsubmit="return onsubmitfun()">
+        <input type="submit" value="静态注册"/>
+    </form>
+    <!--return false 可以阻止表单提交-->
+    <form action="http://www.baidu.com" method="post" id="st01">
+        <input type="submit" value="动态注册"/>
+    </form>
+</body>
+</html>

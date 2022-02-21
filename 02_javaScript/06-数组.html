@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var arr = [true,1];//定义一个空数组
+        // alert(a.length);//0
+
+        arr[0] = 12;
+        // alert(arr[0]);//12
+        // alert(arr.length);//1
+
+
+        //JavaScript语言中的数组，只要通过下标进行赋值，那么最大的下标值，就会自动的给数组做扩容操作
+        arr[2] = "abc";
+        // alert(arr[2]);//1
+        // alert(arr[1]);//1
+        // alert(arr.length);//1
+
+        // alert(arr[9]);//undefined
+        // alert(arr.length);//3
+
+        // for(var i=0; i<arr.length; i++){
+        //     alert(arr[i]);
+        // }
+
+        var b=[1,"abc",true];//定义一个长度为3的数组
+        // alert(b.length);//3
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+	<!--2,使用jQuery来绑定事件	-->
+	<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+		//1,js 原生的单击事件
+		// window.onload = function () {
+		// 	var byIdObj = document.getElementById("btnId");
+		// 	// alert(byIdObj);//[object HTMLButtonElement] =====> dom对象
+		//
+		// 	byIdObj.onclick = function () {
+		// 		alert("js 原生的单击事件");
+		// 	}
+		// }
+
+		//2,使用jQuery来绑定事件
+		//测试jQuery是否引入到当前script标签中
+		// alert($);
+
+		$(function(){//便是页面加载完成之后。相当于window.onload = function () {}
+			// alert(byIdObj);
+
+			var $btnObj = $("#btnId");//表示按id查询标签对象 jQuery对象默认在变量名以$符号打头
+
+			$btnObj.click(function () {
+				alert("使用jQuery绑定单击事件");
+			});
+		});
+
+
+	</script>
+</head>
+<body>
+
+	<button id="btnId">SayHello</button>
+
+</body>
+</html>

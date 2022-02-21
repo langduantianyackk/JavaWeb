@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            //使用js代码中创建html标签,并显示在页面上
+            //标签的内容是：    <div>这盛世如您所愿</div>
+            var divObj = document.createElement("div");//在内存中<div><div/>
+            // divObj.innerHTML = "这盛世如您所愿";//设置内容<div>这盛世如您所愿</div>,但是，还只是在内存中
+
+            var textNode = document.createTextNode("这盛世如您所愿");
+
+            divObj.appendChild(textNode);//<div>这盛世如您所愿</div>
+
+
+
+            // var bodyObj = document.getElementsByTagName("body");//获取body标签对象错误方式
+            //添加子元素(节点)
+            document.body.appendChild(divObj);//获取body标签对象正确方式：document.body
+        }
+
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //attr():获取和设置属性的值
+            //一个参数:表示获取指定参数的值
+            //两个参数：表示设置属性的值
+            // alert($(":checkbox:first").attr("value"));//获取指定参数的值
+            // $(":checkbox:first").attr("name","abc");//设置
+
+            //attr():还可以操作非标准属性，比如自定义属性：abc,bbj等
+            // $(":checkbox:first").attr("abc","abcValue");//设置
+            // alert($(":checkbox:first").attr("abc"));//获取
+
+            //attr()不推荐操作checked、readOnly、selected、disabled等等
+            // alert($(":checkbox").attr("checked"));//返回undefined，官方觉得返回undefined是个错误，所以引入了prop()
+
+            //prop():获取和设置属性的值，只推荐操作checked、readOnly、selected、disabled等等
+            // alert($(":checkbox").prop("checked"));//获取返回false
+            // alert($(":checkbox").prop("checked","true"));//设置
+
+            //内部插入：
+            // appendTo() a.appendTo(b) 把 a 插入到 b 子元素末尾，成为最后一个子元素
+            // prependTo() a.prependTo(b) 把 a 插到 b 所有子元素前面，成为第一个子元素
+            // $("<h1>标题1</h1>").appendTo("div");//将a元素插入到b元素末尾，称为最后一个元素
+            // $("<h1>标题1</h1>").appendTo($("div"));//将a元素插入到b元素末尾，称为最后一个元素
+            // $("<h1>标题1</h1>").prependTo("div");//将a元素插入到b元素前面，称为第一个元素
+
+            //外部插入
+            // insertAfter() a.insertAfter(b) 得到 ba
+            // insertBefore() a.insertBefore(b) 得到 ab
+            // $("<h1>标题1</h1>").insertAfter("div");//得到ba
+            // $("<h1>标题1</h1>").insertBefore("div");//得到ab
+
+            //替换
+            // replaceWith() a.replaceWith(b) 用 b 替换掉 a
+            // replaceAll() a.replaceAll(b) 用 a 替换掉所有 b
+            // $("div").replaceWith("<h1>标题1</h1>");//用<h1>标题1</h1>替换div
+            // $("<h1>标题1</h1>").replaceAll("div");//用<h1>标题1</h1>替换div
+            // $("<h1>标题1</h1>").replaceAll($("div"));//用<h1>标题1</h1>替换div
+
+            // 删除：
+            // remove() a.remove(); 删除 a 标签
+            // empty() a.empty(); 清空 a 标签里的内容
+            // $("div").remove();//删除div标签
+            $("div").empty();//清空div标签中的内容
+
+
+        });
+    </script>
+</head>
+<body>
+<body>
+    多选：
+    <input name="checkbox" type="checkbox" value="checkbox1" />checkbox1
+    <input name="checkbox" type="checkbox" value="checkbox2" />checkbox2
+    <br/>
+    <div>1234 <span>456</span></div>
+    <div>12348989</div>
+</body>
+</body>
+</html>

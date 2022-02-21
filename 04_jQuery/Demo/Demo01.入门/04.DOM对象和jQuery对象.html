@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	/*jQuery对象的本质：jQuery对象是dom对象数组 + jQuery提供的一系列功能函数*/
+	$(function(){
+		//testDiv.css("color","red")
+		//testDiv.style.color = "blue";
+
+		// var arr = [12,"abc",true];
+		//
+		// var $btns = $("button");
+		//
+		// for(var i=0; i<$btns.length; i++){
+		// 	alert($btns[i]);
+		// }
+
+		//注意：dom对象不能使用jQuery对象的属性和方法，反之亦然
+		// document.getElementById("testDiv").innerHTML = "这是dom对象的属性InnerHTML";
+		// $("#testDiv").innerHTML = "这是jQuery对象的属性InnerHTML";
+
+
+		//dom对象和jQuery对象之间的相互装换
+		//dom对象 ====> jQuery对象:通过核心函数
+		// $(document.getElementById("testDiv"));
+
+		//jQuery对象=====>dom对象：jQuery对象是dom对象的数组，所以取jQuery对象的下标：$btnObj[i]
+		// var $btnObj = $("button");
+		// for(var i=0; i<btnObjs.length; i++){
+		// 	alert(btnObjs[i]);
+		// }
+
+		alert($("button:first"));
+
+
+	});
+
+</script>
+</head>
+<body>
+	
+	<div id="testDiv">Atguigu is Very Good!</div>
+	
+	<button id="dom2dom">使用DOM对象调用DOM方法</button>
+	<button id="dom2jQuery">使用DOM对象调用jQuery方法</button>
+	<button id="jQuery2jQuery">使用jQuery对象调用jQuery方法</button>
+	<button id="jQuery2dom">使用jQuery对象调用DOM方法</button>
+
+</body>
+</html>

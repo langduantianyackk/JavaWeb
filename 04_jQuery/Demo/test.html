@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="script/jquery-1.7.2.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //html()不传参数是获取，传参是设置
+            // alert($("div").html());//获取
+            // $("div").html("<h1>我是div中的标题1</h1>");//设置
+
+            //text()不传参数是获取，传参是设置
+            // alert($("div").text());//获取
+            // $("div").text("<h2>我是div标签中的标题2</h2>");
+
+            //val()：它可以设置和获取表单项的 value 属性值。 跟 dom 属性 value 一样
+            //注意表单项(一般用于input标签)和表单(form标签)的区别
+           $("button").click(function () {
+               // alert($("#username").val());//获取
+               $("#username").val("你好，世界！");//设置
+           });
+
+
+        })
+    </script>
+</head>
+<body>
+    <div>我是div标签 <span>我是div中的span标签</span></div>
+    <input type="text" name="username" id="username">
+    <button>操作输入框</button>
+</body>
+</html>

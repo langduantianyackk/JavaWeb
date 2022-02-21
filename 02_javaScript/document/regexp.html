@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+    <script type="text/javascript">
+        // var patt = /^\w{5,12}$/;
+        //表示要求字符串中，是否包含字母e
+        // var patt = new RegExp("e");
+        // var patt = /e/;
+
+        //1,方括号
+        //表示要求字符串中，是否包含字母a或b或c
+        // var patt = /[abc]/;
+        //表示要求字符串中，是否包含小写字母a-z中的任意一个
+        // var patt = /[a-z]/;
+        //表示要求字符串中，是否包含大写字母A-Z中的任意一个
+        // var patt = /[A-Z]/;
+        //表示要求字符串中，是否包含数字0-9
+        // var patt = /[0-9]/;
+
+        //2,元字符
+        //表示要求字符串中，是否包含大小写字母A-z,数字0-9，下划线(_)
+        // var patt = /\w/;
+
+        //3,量词
+        //表示要求字符串中，是否包含至少一个a
+        // var patt = /a+/;
+        //表示要求字符串中，是否*包含*  零个 或  多个a
+        // var patt = /a*/;
+        //表示要求字符串中，是否*包含*  1个 或  零个a
+        // var patt = /a?/;
+        //表示要求字符串中，是否包含X=3个连续的a
+        // var patt = /a{3}/;
+        //表示要求字符串中，是否包含至少X=3个连续的a，最多包含Y=5个连续的a
+        // var patt = /a{3,5}/;
+        //表示要求字符串中，是否包含至少X=3个连续的a
+        // var patt = /a{3,}/;
+        //表示要求字符串中，是否包含结尾为a的字符
+        // var patt = /a$/;
+        //表示要求字符串必须以a打头
+        // var patt = /^a/;
+
+        //表示要求字符串中，是否包含至少X=3个连续的a，最多包含Y=5个连续的a
+        // var patt = /a{3,5}/;
+        //要求字符串从头到尾完全匹配
+        // var patt = /^a{3,5}$/;
+        var patt = /^\w{5,12}$/;
+        var str = "Ifromopjitqwt";
+        alert(patt.test(str));
+
+
+
+        // 问题 var patt = /a{3,5}/; 最多5个什么时候有用？
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

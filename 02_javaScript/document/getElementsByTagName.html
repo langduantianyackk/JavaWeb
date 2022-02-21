@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            // alert();
+        }
+        //全选
+        function onclickAll(){
+            //document.getElementsByTagName("input"):按照指定的标签名查询并返回集合
+            //这个集合的操作跟数组一致，集合中都是dom对象，集合中的顺序是它们在html中的从上到下的顺序
+            var inputs = document.getElementsByTagName("input");
+
+            for(var i=0; i<inputs.length; i++){
+                inputs[i].checked = true;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    兴趣爱好：
+    <input type="checkbox" value="cpp"/>C++
+    <input type="checkbox" value="java"/>JAVA
+    <input type="checkbox" value="js"/>javaScript<br/>
+    <button onclick="onclickAll()">全选</button>
+</body>
+</html>

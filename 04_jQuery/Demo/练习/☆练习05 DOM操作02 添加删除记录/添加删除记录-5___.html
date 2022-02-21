@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="styleB/css.css" />
+<script type="text/javascript" src="../../script/jquery-1.7.2.js"></script>
+<script type="text/javascript">
+	
+	//页面加载完成
+	$(function(){
+
+		//创建一个复用的删除的function函数
+		var deleteFun = function () {
+			// alert("删除操作的function" + this);
+
+			//获取a标签对应的祖父标签tr
+			//在事件响应的function函数中,有一个this对象，这个this对象就是当前正在响应时间的dom对象
+			var $trObj = $(this).parent().parent();
+
+
+			//获取tr下的第一个标签
+			var name = $trObj.find("td:first").text();
+
+			// alert(name);
+
+			/*
+            confirm是JavaScript语言提供的一个确认提示框函数，你给它传什么，它就提示什么
+            当用户点击了确定，就返回true,当用户点击了取消，返回false
+             */
+			var flag = confirm("你确定要删除["+name+"]成员？");
+
+			if(flag){
+
+				//删除已有的成员
+				$trObj.remove();//删除tr标签
+			}
+
+			//return false:可以阻止元素的默认行为
+			return false;
+		}
+
+		//添加员工
+		$("#addEmpButton").click(function () {
+			// alert($("#empName:text").val());
+			var name = $("#empName").val();//姓名
+			var email = $("#email").val();//email
+			var salary = $("#salary").val();//薪水
+
+			//创建tr
+/*			<tr>
+				<td>Jerry</td>
+				<td>jerry@sohu.com</td>
+				<td>8000</td>
+				<td><a href="#">Delete</a></td>
+			</tr>*/
+
+
+			//创建一个行标签，添加到显示数据的表格中
+			var $trObj = $("<tr></tr>").append("<td>"+name+"</td>")
+			              .append("<td>"+email+"</td>")
+					      .append("<td>"+salary+"</td>")
+						  .append("<td><a href='#'>Delete</a></td>");
+
+			//将创建的标签添加到显示数据的表格中
+			$trObj.appendTo("#employeeTable") ;
+
+			//给添加到显示数据的表格中的tr标签下的a标签绑定事件(原因是之前的绑定的删除事件是针对已有的标签的)
+			$trObj.find("a").click(deleteFun);
+
+		});
+
+
+		//删除员工
+		//此时的a标签出触发的时间仅仅是已有的三个a标签，后面添加的标签无效
+		$("a").click(deleteFun);
+		// $("a").click(function () {//在事件响应的function函数中有一个this对象，这个this对象就是当前正在响应时间的dom对象
+		// 	alert("事件响应的function" + this);
+		//
+		// 	deleteFun();
+		// });
+	});
+
+</script>
+</head>
+<body>
+
+	<table id="employeeTable">
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Salary</th>
+			<th> </th>
+		</tr>
+		<tr>
+			<td>Tom</td>
+			<td>tom@tom.com</td>
+			<td>5000</td>
+			<td><a href="#">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>jerry@sohu.com</td>
+			<td>8000</td>
+			<td><a href="#">Delete</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>bob@tom.com</td>
+			<td>10000</td>
+			<td><a href="#">Delete</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+	
+		<h4>添加新员工</h4>
+
+		<table>
+			<tr>
+				<td class="word">name: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">email: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">salary: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+</html>
